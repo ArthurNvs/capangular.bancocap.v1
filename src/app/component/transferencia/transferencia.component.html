@@ -1,0 +1,32 @@
+<form style="width: 500px; margin: 0 auto; margin-top: 60px;" #formUser="ngForm" (ngSubmit)="onTransferir(formUser)"
+    novalidate>
+
+    <h1>Realizar Transferência</h1>
+    <label for="valor">Valor</label>
+    <input type="text" #valor="ngModel" ngModel name="valor" required><br>
+
+    <label for="hashOrigem">Hash de Origem</label>
+    <input type="text" name="hashOrigem" #hashOrigem="ngModel" ngModel required><br>
+
+    <label for="hashDestino">Hash de Destino</label>
+    <input type="text" name="hashDestino" #hashDestino="ngModel" ngModel required><br>
+
+
+    <label for="dataHora">Data</label>
+    <input type="date" #dataHora="ngModel" ngModel name="dataHora" [value]="dataHora" required><br>
+
+    <p [hidden]="!error" style="color: red;">
+        {{ errorDesc }}
+    </p>
+
+    <br><br>
+    <h1 style="color: red;">Atenção</h1>
+    <b>Confirme os dados!</b> <br><br>
+    Conta de origem: {{hashOrigem.value}} <br>
+    Conta de destino: {{hashDestino.value}} <br>
+    Valor: {{valor.value}} <br>
+    Data: {{dataHora.value}} <br>
+
+    <button class="btn waves-effect waves-light" style="width: 100%;"> <a style="color: #FFFFFF">Transferir</a>
+    </button>
+</form>

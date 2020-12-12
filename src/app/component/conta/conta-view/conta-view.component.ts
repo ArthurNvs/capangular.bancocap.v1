@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from 'src/app/model/cliente.model';
 import { Conta } from 'src/app/model/conta.model';
 
 @Component({
@@ -8,7 +7,6 @@ import { Conta } from 'src/app/model/conta.model';
   styleUrls: ['../../../app.component.css']
 })
 export class ContaViewComponent implements OnInit {
-  conta:Conta = {cliente: "Kalila",hash:"1234463131",saldo: 2516};
   
   colunas = [
     { field: 'cliente' },

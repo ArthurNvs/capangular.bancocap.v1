@@ -1,0 +1,28 @@
+<form style="width: 500px; margin: 0 auto; margin-top: 60px;" #formUser="ngForm" (ngSubmit)="onDeposito(formUser)"
+    novalidate>
+
+    <h1>Fazer Depósito</h1>
+    <label for="valor">Valor</label>
+    <input type="text" #valor="ngModel" ngModel name="valor" required><br>
+
+    <label for="hash">Hash</label>
+    <input type="text" name="hash" #hash="ngModel" ngModel required><br>
+
+
+    <label for="dataHora">Data</label>
+    <input type="date" #dataHora="ngModel" ngModel name="dataHora" [value]="dataHora" required><br>
+
+    <p [hidden]="!error" style="color: red;">
+        {{ errorDesc }}
+    </p>
+
+    <br><br>
+    <h1 style="color: red;">Atenção</h1>
+    <b>Confirme os dados!</b> <br>
+    Conta: {{hash.value}} <br>
+    Valor: {{valor.value}} <br>
+    Data: {{dataHora.value}} <br>
+
+    <button class="btn waves-effect waves-light" style="width: 100%;"> <a style="color: #FFFFFF">Depositar</a>
+    </button>
+</form>

@@ -19,6 +19,10 @@ import { UsuarioComponent } from './component/usuario/usuario.component';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { AgGridModule } from 'ag-grid-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DepositoComponent } from './component/deposito/deposito.component';
+import { SaqueComponent } from './component/saque/saque.component';
+import { TransferenciaComponent } from './component/transferencia/transferencia.component';
+import { ExtratoComponent } from './component/extrato/extrato.component';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -35,7 +39,11 @@ const maskConfig: Partial<IConfig> = {
     CPFPipe,
     ClienteViewComponent,
     ContaViewComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    DepositoComponent,
+    SaqueComponent,
+    TransferenciaComponent,
+    ExtratoComponent
   ],
   imports: [
     BrowserModule,
