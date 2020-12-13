@@ -11,7 +11,7 @@ export class SaqueComponent implements OnInit {
 
   error: boolean = false;
   errorDesc: string = "";
-  dataHora: Date = new Date();
+  date: Date = new Date();
 
   constructor(private router: Router) { }
 

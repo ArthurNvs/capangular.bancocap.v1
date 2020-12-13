@@ -11,12 +11,11 @@ export class DepositoComponent implements OnInit {
 
   error: boolean = false;
   errorDesc: string = "";
-  dataHora: Date = new Date();
+  date: Date = new Date();
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onDeposito(formUser: NgForm) {
     console.log(formUser.value);

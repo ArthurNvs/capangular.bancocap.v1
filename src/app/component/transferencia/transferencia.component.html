@@ -12,8 +12,8 @@
     <input type="text" name="hashDestino" #hashDestino="ngModel" ngModel required><br>
 
 
-    <label for="dataHora">Data</label>
-    <input type="date" #dataHora="ngModel" ngModel name="dataHora" [value]="dataHora" required><br>
+    <label for="dataHora">Data/Hora</label>
+    <input [placeholder]="date" #dataHora="ngModel" ngModel name="dataHora" [value]="date" readonly required><br>
 
     <p [hidden]="!error" style="color: red;">
         {{ errorDesc }}
@@ -22,10 +22,11 @@
     <br><br>
     <h1 style="color: red;">Atenção</h1>
     <b>Confirme os dados!</b> <br><br>
-    Conta de origem: {{hashOrigem.value}} <br>
-    Conta de destino: {{hashDestino.value}} <br>
-    Valor: {{valor.value}} <br>
-    Data: {{dataHora.value}} <br>
+    Conta de origem: <b>{{hashOrigem.value}}</b> <br>
+    Conta de destino: <b>{{hashDestino.value}}</b> <br>
+    Valor: <b>R$ {{valor.value}}</b> <br>
+    Data: <b>{{date.getUTCDate()}}/{{date.getMonth()}}/{{date.getFullYear()}}</b> <br>
+    Hora: <b>{{date.getHours()}}h {{date.getMinutes()}}min</b> <br>
 
     <button class="btn waves-effect waves-light" style="width: 100%;"> <a style="color: #FFFFFF">Transferir</a>
     </button>
