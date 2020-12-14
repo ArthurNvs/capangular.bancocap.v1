@@ -23,6 +23,7 @@ import { DepositoComponent } from './component/deposito/deposito.component';
 import { SaqueComponent } from './component/saque/saque.component';
 import { TransferenciaComponent } from './component/transferencia/transferencia.component';
 import { ExtratoComponent } from './component/extrato/extrato.component';
+import { ButtonRendererComponent } from './button-renderer.component';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -50,7 +51,7 @@ const maskConfig: Partial<IConfig> = {
     AppRoutingModule,
     FormsModule,
     NgxMaskModule.forRoot(maskConfig),
-    AgGridModule.withComponents([]),
+    AgGridModule.withComponents([ButtonRendererComponent]),
     BrowserAnimationsModule,
    /*  MatToolbarModule,
     MatButtonModule,

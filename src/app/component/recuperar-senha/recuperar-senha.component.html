@@ -1,11 +1,12 @@
-<form #formSenha = "ngForm" (ngSubmit)="onEnviarSenha(formSenha)" novalidate>
-  <label for="e-mail" >E-mail</label>
-  <input type="email"  name="email" #email="ngModel" ngModel required email><br>  
+<form style="width: 500px; margin: 0 auto; padding-top:30px;" #formSenha="ngForm" (ngSubmit)="onEnviarSenha(formSenha)"
+  novalidate>
+  <label for="e-mail">E-mail</label>
+  <input type="email" name="email" #email="ngModel" ngModel required email><br>
 
- 
+
   <button *ngIf="formSenha.valid"> <a routerLink="/login" routerLinkActive="active">Enviar</a>
-  </button> 
+  </button>
 
-  <button *ngIf="!formSenha.valid">Enviar
-  </button> 
-</form>  
+  <button class="btn waves-effect waves-light" *ngIf="!formSenha.valid">Enviar
+  </button>
+</form>

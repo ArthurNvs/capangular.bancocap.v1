@@ -10,27 +10,34 @@ import { Usuario } from 'src/app/model/usuario.model';
 })
 export class LoginComponent implements OnInit {
 
-  usuario:Usuario ={email:"", senha: "" };
-  error:boolean = false;
-  errorDesc:string = "";
-  
+  usuario: Usuario = { email: "", senha: "" };
+  error: boolean = false;
+  errorDesc: string = "";
+
   constructor(private router: Router) { }
 
-  onLogin(formLogin: NgForm){
-     
+  onLogin(email: string) {
+    if (!email) {
+      this.error = true;
+      this.errorDesc = "Preencha o campo e-mail"
+    } else {
+      this.error = false;
+    }
   }
 
-  onLoginErro(email:string, password:string){
+  onLoginErro(email: string, password: string) {
     console.log(email, password);
     if (!email) {
-      this.error = true;      
+      this.error = true;
       this.errorDesc = "Preencha o campo e-mail"
-    } else if(!password){
-      this.error = true;      
-      this.errorDesc = "Preencha o campo senha"  
-    } 
+    } else if (!password) {
+      this.error = true;
+      this.errorDesc = "Preencha o campo senha"
+    } else {
+      this.error = false;
+      this.router.navigate(['/home']);
+    }
   }
-
   ngOnInit(): void {
   }
 
